@@ -1,0 +1,194 @@
+Lista de Exercícios de C
+TURMA AUT 102N
+NOME: LUIZ ANTONIO NATALI DE SOUZA
+Data da entrega dia da Prova 04 de Outubro
+
+1. Elaborar um programa para calcular a quantidade de litros de combustível gasta em uma viagem, utilizando-se um automóvel que faz 12 km por litro. Para obter o cálculo, o usuário deverá fornecer o tempo gasto na viagem em horas e a velocidade média durante a mesma. Desta forma, será possível obter a distância percorrida com a fórmula DISTANCIA = TEMPO * VELOCIDADE. Tendo o valor da distância, basta calcular a quantidade de litros de combustível utilizada na viagem com a fórmula: LITROS_USADOS ¬ DISTANCIA / 12. O programa deverá apresentar os valores da velocidade média, tempo gasto na viagem, a distância percorrida e a quantidade de litros utilizada na viagem.
+
+main ()
+{
+float t_viagem, vmedia, distancia, litros_usados;
+printf ("Qual o o tempo de viagem \n");
+scanf ("%f",&t_viagem);
+printf ("Qual a velocidade media na viagem \n");
+scanf ("%f",&vmedia);
+distancia=(t_viagem*vmedia);
+litros_usados=(distancia/12);
+printf("A velocidade media foi de %.2f km por horas \n",vmedia);
+printf("O tempo de viagem foi de %.2f horas \n",t_viagem);
+printf("A distancia percorrida na viagem foi de %.f Kilometros \n",distancia);
+printf("A quantidade de combustivel utilizada na viagem foi de %.2f litros \n",litros_usados);
+}
+
+2. Para vários tributos, a base de cálculo é o salário mínimo. Fazer um programa que leia o valor do salário mínimo e o valor do salário de uma pessoa. Calcular e imprimir quantos salários mínimos ela ganha.
+
+main ()
+{
+float sal_min, sal_pessoa, q_sal_rec;
+printf ("O valor do salario minimo e \nR$");
+scanf("%f",&sal_min);
+printf("O valor do salario recebido pela pessoa \nR$");
+scanf("%f",&sal_pessoa);
+q_sal_rec=(sal_pessoa/sal_min);
+printf("Uma pessoa que recebe um salario de R$ %.2f reais recebe %.1f salarios minimos \n", sal_pessoa,q_sal_rec);
+}
+
+
+3. Elaborar um programa para entrar com o saldo de uma aplicação e imprimir o novo saldo, considerando 1 mês de aplicação e o reajuste de 2% ao mês.
+
+main()
+{
+float s_aplic,reaj,s_novo;
+printf("O valor do saldo aplicado e \nR$");
+scanf("%f",&s_aplic);
+reaj=(s_aplic*2/100);
+s_novo=(s_aplic+reaj);
+printf("Apos um mes aplicado o saldo sera de R$ %.2f \n",s_novo);
+}
+
+
+4. Fazer um programa que recebe um valor a ser aplicado e a quantidade de meses que esse valor ficará aplicado, exiba uma simulação do valor que a pessoa receberá no final do período aplicado sabendo que a taxa de juros é de 3,5% ao mês.
+
+main()
+{float v_aplic,prazo,tx_juros,rend,v_final;
+printf("Qual o valor aplicado \nR$");
+scanf("%f",&v_aplic);
+printf("O prazo de aplicacao e \n");
+scanf("%f",&prazo);
+tx_juros=(3.5/100);
+rend=(tx_juros*prazo*v_aplic);
+v_final=(v_aplic+rend);
+printf("O valor apos o prazo de aplicacao sera de R$ %.2f reais \n", v_final);
+}
+
+
+5.  Fazer um programa que recebe um valor a ser aplicado e a quantidade de dias que esse valor ficará aplicado, exiba uma simulação do valor que a pessoa receberá no final do período aplicado sabendo que a taxa de juros é de 120% ao ano. Deve ser considerado a media de 30 dias mensais.
+
+main()
+{
+float v_aplic,p_dias,tx_juros,tx_juros_aa,j_prazo,rend,v_final;
+printf("Qual o valor a ser aplicado \nR$");
+scanf("%f",&v_aplic);
+printf("QUal o prazo em dias que o valor deve ser aplicado \n");
+scanf("%f",&p_dias);
+tx_juros=(120/100);
+tx_juros_aa=(tx_juros/360);
+j_prazo=(p_dias*tx_juros_aa);
+rend=(v_aplic*j_prazo);
+v_final=(v_aplic+rend);
+printf("O valor aplicado no final do periodo sera de R$ %.2f \n",v_final);
+}
+
+
+6. Crie um programa que leia um valor de hora e informe quantos minutos se passaram desde o início do dia.
+
+main()
+{
+int horas,minutos;
+printf("Qual a hora atual (formato 24) \n");
+scanf("%d",&horas);
+minutos=(horas*60);
+printf("Do inicio do dia ate a hora infomada ja se passaram %.d minutos \n",minutos);
+}
+
+
+7. Faça um programa que receba o ano de nascimento de uma pessoa e o ano atual, calcule e mostre:
+
+a. A idade da pessoa em anos;
+b. A idade da pessoa em meses;
+c. A idade da pessoa em dias;
+d. A idade da pessoa em semanas.
+
+
+main()
+{
+int ano_nasc,ano_atual,id_anos,id_meses,id_dias,id_semanas;
+printf("Qual o ano do seu nascimento \n");
+scanf("%f",&ano_nasc);
+printf("Qual o ano atual \n");
+scanf("%f",&ano_atual);
+id_anos=(ano_atual-ano_nasc);
+id_meses=(id_anos*12);
+id_dias=(id_anos*365);
+id_semanas=(id_meses*4);
+//Resposta da questao a
+printf("A idade da pessoa em anos e %.f \n"),id_anos;
+//Resposta da questao b
+printf("A idade da pessoa em meses e %.f \n"),id_meses;
+//Resposta da questao c
+printf("A idade da pessoa em dias e %.f \n"),id_dias;
+//Resposta da questao d
+printf("A idade da pessoa em semanas e %.f \n"),id_semanas;
+}
+
+8. Elabore um programa que receba o tempo de vida útil de um torno (em anos), o valor gerado por ele mensal, o custo do torno para a empresa. Calcule e exiba:
+a. Quanto tempo vai levar para o torno se pagar (meses);
+b. Qual o valor que ele rendeu de lucro para empresa durante sua vida útil.
+
+main()
+{
+float v_util,l_mensal,valor,id_meses,l_total,retorno,l_liquido;
+printf("Qual a via util do torno (em anos) \n");
+scanf("%f",&v_util);
+printf("O lucro mensal gerado pelo torno e \n R$");
+scanf("%f",&l_mensal);
+printf("O custo do torno foi de \nR$");
+scanf("%f",&valor);
+id_meses=(v_util*12);
+l_total=(id_meses*l_mensal);
+retorno=(valor/l_mensal);
+l_liquido=(l_total-valor);
+//Resposta da questao a
+printf("O retorno do invenstimento no torno e de %.f meses \n",retorno);
+//Resposta da questao b
+printf("O lucro que esse torno vai render durante sua vida util para empresa e R$ %.2f \n",l_liquido); 
+}
+
+
+9. Escreva um algoritmo que leia o número de horas trabalhadas por um funcionário durante um mês, o valor que recebe por hora, o número de horas extras trabalhadas e o número de dependentes. O algoritmo deve calcular e escrever o salário deste funcionário, sabendo-se que para cada hora extra o valor recebido é o dobro do valor normal e que cada dependente acrescenta 5% ao salário normal (sem contabilizar horas extras).
+
+main()
+{
+float h_trab,v_hora,h_extras,depend,s_normal,v_h_extra,v_depend,s_fam,s_horas,s_final;
+printf("Qual a quantidade de horas trabalhadas no mes \n");
+scanf("%f",&h_trab);
+printf("Qual o valor recebido por hora trabalhada R$\n");
+scanf("%f",&v_hora);
+printf("Quantas horas extras foram realizadas pelo funcionario \n");
+scanf("%f",&h_extras);
+printf("Quantos dependentes o funcionario tem \n");
+scanf("%f",&depend);
+s_normal=(v_hora*h_trab);
+v_h_extra=(v_hora*2);
+v_depend=(s_normal*5/100);
+s_fam=(depend*v_depend);
+s_horas=(h_extras*v_h_extra);
+s_final=(s_normal+s_fam+s_horas);
+printf("O valor a receber e R$ %.2f \n",s_final);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
